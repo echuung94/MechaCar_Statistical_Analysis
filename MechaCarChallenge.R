@@ -28,7 +28,10 @@ lot_summary <- SuspensionCoil %>% group_by(Manufacturing_Lot) %>% summarize(Mean
 #1. Rscript using t.test()
 t.test(SuspensionCoil$PSI, mu=1500)
 
-#2. Rscripts using t.test() function and subset()
+#2. Rscripts using t.test() function and subset() for each manufacturing lot 
+#Lot 1 
 t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot1")$PSI,mu = 1500)
+#Lot 2 
 t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot2")$PSI,mu = 1500)
+#Lot 3 
 t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot3")$PSI,mu = 1500)
