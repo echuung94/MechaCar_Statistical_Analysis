@@ -22,3 +22,13 @@ total_summary <- SuspensionCoil %>% summarize(Mean=mean(PSI),Median=median(PSI),
 
 #3. Rscript that creates a lot_summary 
 lot_summary <- SuspensionCoil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI), .groups='keep')
+
+# Deliverable 3 
+
+#1. Rscript using t.test()
+t.test(SuspensionCoil$PSI, mu=1500)
+
+#2. Rscripts using t.test() function and subset()
+t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot1")$PSI,mu = 1500)
+t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot2")$PSI,mu = 1500)
+t.test(subset(SuspensionCoil,Manufacturing_Lot=="Lot3")$PSI,mu = 1500)
